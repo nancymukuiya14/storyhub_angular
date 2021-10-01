@@ -15,36 +15,33 @@ export class BlogpostComponent implements OnInit {
 
   allblogs
   comments
+
   constructor(private blogService: BlogService) {
-   };
-  
+  };
+
 
   ngOnInit(): void {
     this.getAllBlogs();
+    this.addNewBlog();
   }
   getAllBlogs() {
     this.blogService.getAllBlogs().subscribe(data => {
-        console.log(data);
-        this.allblogs = data;
-      }
+      console.log(data);
+      this.allblogs = data;
+    }
     )
   }
-  addNewBlog(){}
+
+  addNewBlog() {
+    this.blogService.addNewBlog(this.user_id).subscribe(data => {
+      console.log(data);
+      this.allblogs = data;
+    }
+    )
+  }
   
-
-//   addNewBlog(){
-//     this.blogService
-//     .addBlog(new blog(this.title, this.content, this.author, this.user_id))
-//     .subscribe((response) => {
-//         console.log(response);
-//         this.getAllBlogs();
-//       },
-//       (error) => {
-//         console.log(error);
-//       }
-//     )
-//   }
-
-
-// 
 }
+
+
+  // 
+

@@ -1,0 +1,9 @@
+.nav-item {
+    position: relative;
+    left: 900px;
+    color: white;
+}
+#nav {
+    background-color: #251e51;
+    color: white;
+}
